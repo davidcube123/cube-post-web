@@ -11,7 +11,7 @@ const projects = [
   // 1. Deep Water (2026)
   {
     title: "Deep Water",
-    poster: "https://film-book.com/wp-content/uploads/2026/02/deep-water-2026-movie-poster.jpg",
+    poster: "https://c3687.eu-central-1.linodeobjects.com/2025/02/MV5BZmE4MTYzNzQtMjVkNy00NWY1LTllMjctYTc5YzY5NjNiYTk3XkEyXkFqcGc@._V1_.jpg",
     director: "Renny Harlin",
     omdbTitle: "Deep Water",
   },
