@@ -1,0 +1,46 @@
+{
+  "name": "Cube Post - Postproduccion",
+  "short_name": "Cube Post",
+  "description": "Postproduccion de imagen en Barcelona",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020205",
+  "theme_color": "#020205",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/cube-logo-original.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/cube-logo-original.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["entertainment", "business"],
+  "lang": "es",
+  "dir": "ltr",
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Trabajos",
+      "url": "/trabajos",
+      "description": "Ver nuestros proyectos"
+    },
+    {
+      "name": "Contacto",
+      "url": "/contacto",
+      "description": "Contacta con nosotros"
+    }
+  ]
+}
