@@ -1,0 +1,392 @@
+/* Fonts loaded via next/font for better performance */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 330 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 120 60% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 330 100% 60%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 330 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 120 60% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 330 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-syne), sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    line-height: 1.75;
+    color: hsl(var(--muted-foreground));
+  }
+
+  a {
+    transition: color 0.15s ease;
+  }
+
+  /* Better text rendering */
+  h1, h2, h3, h4, h5, h6, p, span, a, li {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .text-display {
+    font-family: var(--font-syne), sans-serif;
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+  }
+
+  .text-body-large {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .section-spacing {
+    @apply py-24 md:py-32;
+  }
+
+  .card-spacing {
+    @apply p-6 md:p-8;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Simplified neon effects - reduced blur for performance */
+.neon-green {
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+.neon-magenta {
+  color: #ff00aa;
+  text-shadow: 0 0 10px #ff00aa;
+}
+
+/* Page title text - Fruit Yellow */
+.gradient-text {
+  color: #FFD700;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+/* Optimized scrolling banner - GPU accelerated */
+@keyframes scroll-left {
+  0% { transform: translateX(0) translateZ(0); }
+  100% { transform: translateX(-50%) translateZ(0); }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 35s linear infinite;
+  will-change: transform;
+}
+
+/* LMT Carousel animation - smooth scroll */
+@keyframes scroll-lmt {
+  0% { transform: translateX(0) translateZ(0); }
+  100% { transform: translateX(-50%) translateZ(0); }
+}
+
+/* Carousel scroll speeds - faster on mobile for better visibility */
+.carousel-scroll {
+  animation: scroll-lmt 18s linear infinite; /* Mobile: fast */
+}
+
+@media (min-width: 640px) {
+  .carousel-scroll {
+    animation: scroll-lmt 25s linear infinite; /* Tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-scroll {
+    animation: scroll-lmt 30s linear infinite; /* Desktop */
+  }
+}
+
+/* Grid line background - simplified */
+.grid-background {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Simplified service card effect */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.02) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg) translateZ(0);
+  transition: all 0.4s ease;
+}
+
+.service-card:hover::before {
+  top: -50%;
+  left: -50%;
+}
+
+/* Performance hints for animated elements */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* ============================================
+   MOBILE OPTIMIZATIONS FOR ANDROID & iOS
+   ============================================ */
+
+/* Safe area insets for notched devices (iPhone X+, Android) */
+@supports (padding: env(safe-area-inset-top)) {
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Improve touch targets - minimum 44px for iOS, 48dp for Android */
+@layer components {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    @apply flex items-center justify-center;
+  }
+
+  .touch-target-lg {
+    min-height: 48px;
+    min-width: 48px;
+    @apply flex items-center justify-center;
+  }
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Smooth scrolling with momentum on iOS */
+.scroll-momentum {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+/* Disable pull-to-refresh on mobile when not needed */
+body {
+  overscroll-behavior-y: contain;
+}
+
+/* Prevent tap highlight on mobile */
+button, a, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improve input fields on mobile */
+input, textarea, select {
+  font-size: 16px; /* Prevents zoom on iOS when focusing inputs */
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/* Better active states for mobile */
+@media (hover: none) and (pointer: coarse) {
+  button:active,
+  a:active,
+  [role="button"]:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+}
+
+/* Mobile-specific responsive adjustments */
+@media (max-width: 640px) {
+  /* Smaller padding on mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Adjust font sizes for mobile readability */
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  /* Better spacing for touch on mobile */
+  .section-spacing {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  /* Reduce grid background complexity on mobile */
+  .grid-background {
+    background-size: 40px 40px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* High DPI screens (Retina displays) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Thinner borders for high DPI */
+  .border {
+    border-width: 0.5px;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-scroll-left {
+    animation: none;
+  }
+}
+
+/* Dark mode optimizations for OLED screens (battery saving) */
+@media (prefers-color-scheme: dark) {
+  .bg-background {
+    background-color: #000000;
+  }
+}
+
+/* Landscape mode adjustments for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .section-spacing {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  header {
+    height: 60px !important;
+  }
+}
